@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FUFUの个人主页</title>
+    <style>
+        body {
+            background: cornflowerblue;
+        }
+        .fu1 {
+            font-size: 20px;
+            color: pink;
+            text-align: center;
+        }
+.box {
+  position: relative;
+  width: 500px;
+  height: 450px;
+  margin: 0 auto; /* 将左右边距设置为自动，实现水平居中 */
+  background-color: rgb(32, 73, 132, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+  display: inline-block;
+}
+        h2 {
+            font-size: 32px;
+            text-align: center;
+            color: rgba(204, 23, 23, 0.2);
+        }
+        .boxtwo{
+            position: relative;
+            width: 350px;
+            height: 25px;
+            margin: 50px auto;
+            background-color: rgb(32, 73, 132, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+            display: inline-block;
+        }
+        p {
+            text-align: center;
+            font-size: 19px;
+            color: rgb(7, 23, 51);
+        }
+        .inz{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div class="inz">
+<div class="box">
+    <h2>WDNMD</h2>
+    <div id="app">
+        <p>{{ randomText }}</p>
+    </div>
+<div class="fu1">
+    <a href="https://live.bilibili.com/30419273"><div class="boxtwo">
+    FUFU直播间,请关注她捏（是男的！）
+    </div></a>
+    <br>
+    好好好，他是个屑！
+    <br>
+    所以ufuf是男生）
+    <br>
+    请记住本网址,<a href="https://ufuf.lixuanzer.top">ufuf.lixuanzer.top</a>
+    <br>
+    填写简介请发邮箱给 lxz@lixuanzer.top
+    <div id="app1">
+        <p>{{ currentTime }}</p>
+    </div>
+</div>
+</div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            texts: [
+                "我不是我，我就是我，你不是你，你就是你，啊哈哈哈哈",
+                "好好好，这么玩是吧",
+                "你先开的",
+                "闪光dance",
+                "WDNMD",
+                "服了你这个老六了",
+                "只要有时间，我会忆起她的面容",
+                "梦想不能随机,随机老子就要应变",
+                "随意随性随缘， 随你随他随便， 随风随雨随流， 随时随地随天。",
+                "哎呀，这个表情，是被我说中了吗？",
+                "如果你从未在世上出现，我可能已经成了一个和尚"
+            ],
+            randomText: ''
+        },
+        methods: {
+            generateRandomText() {
+                var randomIndex = Math.floor(Math.random() * this.texts.length);
+                this.randomText = this.texts[randomIndex];
+            }
+        },
+        created() {
+            this.generateRandomText();
+        }
+    });
+    new Vue({
+    el: '#app1',
+    data: {
+        currentTime: ''
+    },
+    created() {
+        this.getCurrentTime();
+    },
+    methods: {
+        getCurrentTime() {
+            setInterval(() => {
+                this.currentTime = new Date().toLocaleString();
+            }, 1000);
+        }
+    }
+});
+</script>
+<script></script>
+</body>
+</html>
